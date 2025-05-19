@@ -5,8 +5,8 @@ import { handler as userList } from "./api-user-list/handler.js";
 
 const usersRouter = Router();
 
-usersRouter.get("/me", userList); // Get own user
+usersRouter.get("/me", userMe); // Get own user
 usersRouter.get("/:id", userGet); // Get specific user by id
-usersRouter.get("/", userMe); // List users
+usersRouter.get("/", userList); // List users
 
 export { usersRouter };
