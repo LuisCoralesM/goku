@@ -1,31 +1,22 @@
 {
-  "name": "@goku",
+  "name": "goku-backend",
   "version": "0.0.0",
   "license": "Apache-2.0",
+  "type": "module",
   "keywords": [],
   "scripts": {
-    "build-start": "pnpm build && pnpm start",
-    "start": "node dist/backend/index.js",
-    "build": "tsc",
-    "dev": "tsc-watch --onSuccess \"node dist/backend/index.js\"",
-    "lint": "gts lint",
-    "clean": "gts clean",
-    "compile": "tsc",
-    "fix": "gts fix",
-    "prepare": "npm run compile",
-    "pretest": "npm run compile",
-    "posttest": "npm run lint"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@types/node": "^22.7.5",
-    "gts": "^6.0.2",
-    "prettier": "^3.5.3",
-    "tsc-watch": "^6.2.1",
-    "typescript": "^5.6.3"
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.5",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.5.3"
   },
   "dependencies": {
-    "@types/cors": "^2.8.18",
-    "@types/express": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^5.1.0"
   }
