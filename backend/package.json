@@ -4,7 +4,9 @@
   "license": "Apache-2.0",
   "keywords": [],
   "scripts": {
-    "start": "tsc && node dist/backend/index.js",
+    "build-start": "pnpm build && pnpm start",
+    "start": "node dist/backend/index.js",
+    "build": "tsc",
     "dev": "tsc-watch --onSuccess \"node dist/backend/index.js\"",
     "lint": "gts lint",
     "clean": "gts clean",
