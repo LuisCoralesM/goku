@@ -1,0 +1,30 @@
+{
+  "name": "@goku",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "keywords": [],
+  "scripts": {
+    "start": "tsc && node dist/backend/index.js",
+    "dev": "tsc-watch --onSuccess \"node dist/backend/index.js\"",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "gts": "^6.0.2",
+    "prettier": "^3.5.3",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
