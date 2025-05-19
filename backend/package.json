@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "type": "module",
-  "keywords": [],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
     "lint": "eslint .",
-    "fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "eslint": "^8.57.0",
