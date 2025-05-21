@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/api/index.js",
-    "build": "tsc"
+    "start": "node dist/api/index.js"
   },
   "keywords": [],
   "author": "",
