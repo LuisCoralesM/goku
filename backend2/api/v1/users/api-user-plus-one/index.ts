@@ -32,9 +32,13 @@ export const handler = async (req: Request, res: Response) => {
     const expToNextLevel = isNewLevel ? user.expPerDay * level : user.expToNextLevel - user.exp;
     const randomInt = getRandomInt(1, 4);
     const random = randomInt === 1 ? "" : randomInt;
+    const streak =
+      user.streak === 0 || (user.plusOneDate && isYesterday(user.plusOneDate))
+        ? user.streak + 1
+        : 1;
 
     const toUpdate = {
-      streak: user.streak + 1,
+      streak,
       exp: user.exp + user.expPerDay,
       expToNextLevel,
       level,
@@ -59,4 +63,15 @@ function getRandomInt(min: number, max: number) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function isYesterday(date: Date) {
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  return (
+    date.getDate() === yesterday.getDate() &&
+    date.getMonth() === yesterday.getMonth() &&
+    date.getFullYear() === yesterday.getFullYear()
+  );
 }
