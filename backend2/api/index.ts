@@ -22,4 +22,4 @@ app.use(express.json());
 
 const server = app.listen(port, () => console.log(`🚀 Server ready at: http://localhost:${port}`));
 
-export default server;
+// export default server;
