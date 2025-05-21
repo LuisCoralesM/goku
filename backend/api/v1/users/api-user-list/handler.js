@@ -30,8 +30,6 @@ const users = [
   },
 ];
 
-const handler = async (req, res) => {
+export const handler = async (req, res) => {
   res.status(200).json(users);
 };
-
-export { handler };
