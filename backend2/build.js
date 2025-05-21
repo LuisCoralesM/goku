@@ -5,7 +5,7 @@ const fs = require("fs-extra");
 fs.removeSync("./dist");
 
 // Run TypeScript compilation
-execSync("npx tsc", { stdio: "inherit" });
+execSync("npx prisma generate && tsc", { stdio: "inherit" });
 
 // Copy generated Prisma files
 fs.copySync("./generated", "./dist/generated", {
