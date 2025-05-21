@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import express, { Router } from "express";
 import { v1Router } from "./v1/";
 
-
 dotenv.config();
 
 const port = process.env.PORT || 8000;

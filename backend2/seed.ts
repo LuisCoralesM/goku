@@ -1,5 +1,5 @@
+import { Prisma } from "./generated/prisma";
 import { prisma } from "./prisma";
-import { Prisma } from "./prisma/generated/prisma";
 
 async function seed() {
   // Verify database connection

@@ -147,7 +147,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\ARRECHOPANA\\goku\\backend2\\prisma\\generated\\prisma",
+      "value": "D:\\ARRECHOPANA\\goku\\backend2\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -166,15 +166,16 @@ const config = {
   },
   "relativeEnvPaths": {
     "rootEnvPath": null,
-    "schemaEnvPath": "../../../.env"
+    "schemaEnvPath": "../../.env"
   },
-  "relativePath": "../..",
+  "relativePath": "../../prisma",
   "clientVersion": "6.8.2",
   "engineVersion": "2060c79ba17c6bb9f5823312b6f6b7f4a845738e",
   "datasourceNames": [
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -183,8 +184,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Todo {\n  id          Int      @id @default(autoincrement())\n  description String\n  date        DateTime\n  done        Boolean\n}\n\nmodel User {\n  id             Int      @id @default(autoincrement())\n  username       String\n  level          Int\n  exp            Int\n  expToNextLevel Int\n  expPerDay      Int\n  startDay       DateTime\n  goalDay        DateTime\n  streak         Int\n  missingDays    Int\n  imageUrl       String\n\n  plusOneDate DateTime?\n  updatedAt   DateTime  @updatedAt\n}\n",
-  "inlineSchemaHash": "96abf03e2b1bb52ca0b310e6b0f6b1c9b80fb5e1605e306d7bc8a2bfbc45b095",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Todo {\n  id          Int      @id @default(autoincrement())\n  description String\n  date        DateTime\n  done        Boolean\n}\n\nmodel User {\n  id             Int      @id @default(autoincrement())\n  username       String\n  level          Int\n  exp            Int\n  expToNextLevel Int\n  expPerDay      Int\n  startDay       DateTime\n  goalDay        DateTime\n  streak         Int\n  missingDays    Int\n  imageUrl       String\n\n  plusOneDate DateTime?\n  updatedAt   DateTime  @updatedAt\n}\n",
+  "inlineSchemaHash": "21a2544a51f6b90036ea0d9a67bcfb8048e7c3db9606db838006a0949c52a180",
   "copyEngine": true
 }
 
@@ -193,8 +194,8 @@ const fs = require('fs')
 config.dirname = __dirname
 if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
   const alternativePaths = [
-    "prisma/generated/prisma",
     "generated/prisma",
+    "prisma",
   ]
   
   const alternativePath = alternativePaths.find((altPath) => {
@@ -224,7 +225,7 @@ Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
-path.join(process.cwd(), "prisma/generated/prisma/query_engine-windows.dll.node")
+path.join(process.cwd(), "generated/prisma/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "prisma/generated/prisma/schema.prisma")
+path.join(process.cwd(), "generated/prisma/schema.prisma")
