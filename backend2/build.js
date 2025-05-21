@@ -1,0 +1,18 @@
+const { execSync } = require("child_process");
+const fs = require("fs-extra");
+const path = require("path");
+
+// Clean dist directory
+fs.removeSync("./dist");
+
+// Run TypeScript compilation
+execSync("tsc", { stdio: "inherit" });
+
+// Copy generated Prisma files
+fs.copySync("./generated", "./dist/generated", {
+  filter: src => {
+    return !src.includes("node_modules");
+  },
+});
+
+console.log("Build completed successfully!");

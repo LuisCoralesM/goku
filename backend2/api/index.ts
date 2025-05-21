@@ -1,6 +1,6 @@
 import cors from "cors";
 import dotenv from "dotenv";
-import express, { Router } from "express";
+import express, { Request, Response, Router } from "express";
 import { v1Router } from "./v1/";
 
 dotenv.config();
@@ -14,7 +14,7 @@ app.use(express.json());
 const apiRouter = Router();
 apiRouter.use("/v1", v1Router);
 app.use(apiRouter);
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("server is running");
 });
 
