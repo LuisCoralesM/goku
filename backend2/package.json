@@ -27,6 +27,7 @@
     "@types/cors": "^2.8.18",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
+    "fs-extra": "^11.3.0",
     "typescript-bundle": "^1.0.18"
   }
 }
